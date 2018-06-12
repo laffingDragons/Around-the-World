@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+    font-size: 16px
+}
+
+.primary {
+    background-color: #f8bbd0;
+    color: #000000
+}
+
+.secondary {
+    background-color: #880e4f;
+    color: #ffffff
+}
+
+.p-light {
+    background-color: #ffeeff;
+    color: #000000
+}
+
+.p-dark {
+    background-color: #c48b9f;
+    color: #000000
+}
+
+.s-light {
+    background-color: #bc477b;
+    color: #ffffff
+}
+
+.s-dark {
+    background-color: #560027;
+    color: #ffffff
+}
+
+.home {
+    background-image: url('./assets/images/trianglify.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
