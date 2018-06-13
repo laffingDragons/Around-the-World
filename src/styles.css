@@ -3,10 +3,15 @@
 
 /* You can add global styles to this file, and also import other style files */
 
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+
 :root {
-    font-size: 16px
+    font-size: 20px;
 }
 
+*{
+    font-family: 'Amatic SC', cursive;
+}
 .primary {
     background-color: #f8bbd0;
     color: #000000
@@ -40,5 +45,5 @@
 .home {
     background-image: url('./assets/images/trianglify.png');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 500px;
 }
