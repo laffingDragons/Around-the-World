@@ -4,10 +4,15 @@ import { MatButtonModule, MatCardModule, MatFormFieldModule, MatSelectModule, Ma
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { CountryModule } from './country/country.module'
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './home/home.component';
+import { SharedModule } from './shared/shared.module';
+import { CountriesApiService } from './countries-api.service';
+import { MDBBootstrapModule, WavesModule } from 'angular-bootstrap-md';
+import { HttpClientModule } from "@angular/common/http";
+
 
 @NgModule({
   declarations: [
@@ -17,21 +22,28 @@ import { HomeComponent } from './home/home.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    MDBBootstrapModule,
+    CountryModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,
     MatSelectModule,
     MatOptionModule,
+    WavesModule,    
     NgbModule.forRoot(),
     RouterModule.forRoot([
       {path: 'home', component: HomeComponent},
       {path: '', redirectTo: 'home', pathMatch:'full'},
       {path: '**', component:HomeComponent}
-    ])
+    ]),
+    SharedModule
   ],
-  providers: [],
+  providers: [
+    CountriesApiService    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
