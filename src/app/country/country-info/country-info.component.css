@@ -109,3 +109,17 @@ img {
     width: 100%;
     height:400px;
 }
+
+.card.card-cascade.wider {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.my-4 {
+    margin-bottom: 1.5rem!important;
+}
+
+.card.card-cascade.wider.reverse.my-4{
+    border: none;
+}

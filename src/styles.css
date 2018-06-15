@@ -3,6 +3,7 @@
 
 /* You can add global styles to this file, and also import other style files */
 
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC');
 
 :root {
@@ -11,6 +12,7 @@
 
 *{
     font-family: 'Amatic SC', cursive;
+    line-height: 40px
 }
 .primary {
     background-color: #f8bbd0;
@@ -46,4 +48,20 @@
     background-image: url('./assets/images/trianglify.png');
     background-repeat: no-repeat;
     background-size: 100% 500px;
+}
+
+.center {
+    display: inline;
+    vertical-align: middle;
+    font-size: 7rem;
+    height: 7rem;      
+}
+/* Media query for page title */
+@media screen and (max-width: 600px) {
+    .center{
+        display: inline !important;
+        vertical-align: middle !important;
+        font-size: 3rem !important;
+        height: 5rem !important;
+    }   
 }

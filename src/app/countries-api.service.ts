@@ -31,7 +31,13 @@ export class CountriesApiService {
 
   // fetch country information
   public fetchCountryInfo(country) {
-    let response = this.http.get(`${this.baseUrl}/name/${country}?fulltext=true`)
+    let response = this.http.get(`${this.baseUrl}/alpha/${country}`)
+    return response;
+  }
+
+  // fetch countries for language
+  public fetchCountriesForLang(lang) {
+    let response = this.http.get(`${this.baseUrl}/lang/${lang}`)
     return response;
   }
 }

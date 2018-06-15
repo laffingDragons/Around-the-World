@@ -12,6 +12,8 @@ import { SharedModule } from './shared/shared.module';
 import { CountriesApiService } from './countries-api.service';
 import { MDBBootstrapModule, WavesModule } from 'angular-bootstrap-md';
 import { HttpClientModule } from "@angular/common/http";
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
 
 
 @NgModule({
@@ -25,6 +27,7 @@ import { HttpClientModule } from "@angular/common/http";
     MDBBootstrapModule,
     CountryModule,
     FormsModule,
+    AngularFontAwesomeModule,
     HttpClientModule,
     ReactiveFormsModule,
     MatButtonModule,
