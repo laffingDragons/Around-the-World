@@ -1,17 +1,20 @@
 <div *ngIf="info" class="container-fluid heading">
   <div class="row page-title">
     <div class="mx-auto">
-      <h1 class="center"> {{info[0].name}} </h1>
+      <h1 class="center"> {{info.name}} </h1>
     </div>
   </div>
 </div>
+
+<i (click)="backButton()" class="fa fa-long-arrow-left fa-2x" aria-hidden="true"></i>
+
 
 <div *ngIf="info" class="container country-info-card">
   <!--Card-->
   <div class="card card-cascade wider reverse my-4">
     <!--Card image-->
     <div class="view overlay hm-white-slight waves-light" mdbWavesEffect>
-      <img src="{{info[0].flag}}" class="img-fluid">
+      <img src="{{info.flag}}" class="img-fluid">
       <a>
         <div class="mask"></div>
       </a>
@@ -23,7 +26,7 @@
       <!--Title-->
       <h3 class="card-title">
         <strong> CAPITAL: </strong>
-        {{info[0].capital}}
+        {{info.capital}}
       </h3>
 
       <div class="container">
@@ -32,14 +35,14 @@
           <div class="col-lg-6">
             <h5>
               <strong> POPULATION: </strong>
-              {{info[0].population}}
+              {{info.population}}
             </h5>
           </div>
 
           <div class="col-lg-6">
             <h5>
               <strong> AREA: </strong>
-              {{info[0].area}}
+              {{info.area}}
             </h5>
           </div>
         </div>
@@ -48,14 +51,14 @@
           <div class="col-lg-6">
             <h5>
               <strong> REGION: </strong>
-              {{info[0].region}}
+              {{info.region}}
             </h5>
           </div>
 
           <div class="col-lg-6">
             <h5>
               <strong> SUBREGION: </strong>
-              {{info[0].subregion}}
+              {{info.subregion}}
             </h5>
           </div>
 
@@ -65,7 +68,7 @@
           <div class="col-lg-6">
             <h5 class="indigo-text">
               <strong> TIMEZONES: </strong>
-              <span *ngFor="let timezone of info[0].timezones; let last=last">
+              <span *ngFor="let timezone of info.timezones; let last=last">
                 {{timezone}} {{ last ? '':', '}}
               </span>
             </h5>
@@ -74,7 +77,7 @@
           <div class="col-lg-6">
             <h5 class="indigo-text">
               <strong> BORDERS: </strong>
-              <span *ngFor="let border of info[0].borders; let last=last">
+              <span *ngFor="let border of info.borders; let last=last">
                 {{border}} {{ last ? '':', '}}
               </span>
             </h5>
@@ -86,7 +89,7 @@
           <div class="col-lg-6">
             <h5 class="indigo-text">
               <strong> LANGUAGES: </strong>
-              <span *ngFor="let language of info[0].languages; let last=last">
+              <span *ngFor="let language of info.languages; let last=last">
                 {{language.name}} {{ last ? '':', '}}
               </span>
             </h5>
@@ -95,7 +98,7 @@
           <div class="col-lg-6">
             <h5 class="indigo-text">
               <strong> CURRENCIES: </strong>
-              <span *ngFor="let currency of info[0].currencies; let last=last">
+              <span *ngFor="let currency of info.currencies; let last=last">
                 {{currency.name}} {{ last ? '':', '}}
               </span>
             </h5>

@@ -88,22 +88,11 @@
     margin-top: 12px;
 }
 
-.center {
-    /* text-align: center; */
-    display: inline;
-    vertical-align: middle;
-    font-size: 7rem;
-    height: 7rem;      
-    /* color: white;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%) */
-}
+
 
 .region-cards {
     margin-top: 5em;
+    font-family: 'Amatic SC', cursive;
 }
 
 .page-title {
@@ -111,12 +100,8 @@
     font-family: 'Amatic SC', cursive;
 }
 
-/* Media query for page title */
-@media screen and (max-width: 600px) {
-    .center{
-        display: inline;
-        vertical-align: middle;
-        font-size: 3rem;
-        height: 5rem;
-    }   
+mat-card{
+    font-family: 'Amatic SC', cursive;    
 }
+
+
