@@ -19,13 +19,11 @@ export class CountryInfoComponent implements OnInit {
     // capture name of country
     let countryName = this._route.snapshot.paramMap.get('country');
 
-    console.log(countryName)
 
     // pass countryName to api request function
     this.countryService.fetchCountryInfo(countryName).subscribe(
       data => {
         this.info = data;
-        console.log(this.info);
       },
       error => {
         console.log(error.errorMessage)

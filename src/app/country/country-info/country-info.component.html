@@ -1,115 +1,110 @@
 <div *ngIf="info" class="container-fluid heading">
-  <div class="row page-title">
-    <div class="mx-auto">
-      <h1 class="center"> {{info.name}} </h1>
+    <div class="row page-title">
+        <div class="mx-auto">
+            <h1 class="center" [routerLink]="['/home']" matTooltip="Click to goto home"> {{info.name}} </h1>
+        </div>
     </div>
-  </div>
 </div>
 
 <i (click)="backButton()" class="fa fa-long-arrow-left fa-2x" aria-hidden="true"></i>
 
 
 <div *ngIf="info" class="container country-info-card">
-  <!--Card-->
-  <div class="card card-cascade wider reverse my-4">
-    <!--Card image-->
-    <div class="view overlay hm-white-slight waves-light" mdbWavesEffect>
-      <img src="{{info.flag}}" class="img-fluid">
-      <a>
-        <div class="mask"></div>
-      </a>
-    </div>
-    <!--/Card image-->
-
-    <!--Card content-->
-    <div class="card-body text-center">
-      <!--Title-->
-      <h3 class="card-title">
-        <strong> CAPITAL: </strong>
-        {{info.capital}}
-      </h3>
-
-      <div class="container">
-
-        <div class="row">
-          <div class="col-lg-6">
-            <h5>
-              <strong> POPULATION: </strong>
-              {{info.population}}
-            </h5>
-          </div>
-
-          <div class="col-lg-6">
-            <h5>
-              <strong> AREA: </strong>
-              {{info.area}}
-            </h5>
-          </div>
+    <!--Card-->
+    <div class="card card-cascade wider reverse my-4">
+        <!--Card image-->
+        <div class="view overlay hm-white-slight waves-light" mdbWavesEffect>
+            <img src="{{info.flag}}" class="img-fluid">
+            <a>
+                <div class="mask"></div>
+            </a>
         </div>
+        <!--/Card image-->
 
-        <div class="row">
-          <div class="col-lg-6">
-            <h5>
-              <strong> REGION: </strong>
-              {{info.region}}
-            </h5>
-          </div>
+        <!--Card content-->
+        <div class="card-body text-center">
+            <!--Title-->
+            <h3 class="card-title">
+                <strong> CAPITAL: </strong> {{info.capital}}
+            </h3>
 
-          <div class="col-lg-6">
-            <h5>
-              <strong> SUBREGION: </strong>
-              {{info.subregion}}
-            </h5>
-          </div>
+            <div class="container">
 
-        </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h5>
+                            <strong> POPULATION: </strong> {{info.population}}
+                        </h5>
+                    </div>
 
-        <div class="row">
-          <div class="col-lg-6">
-            <h5 class="indigo-text">
-              <strong> TIMEZONES: </strong>
-              <span *ngFor="let timezone of info.timezones; let last=last">
+                    <div class="col-lg-6">
+                        <h5>
+                            <strong> AREA: </strong> {{info.area}}
+                        </h5>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h5>
+                            <strong> REGION: </strong> {{info.region}}
+                        </h5>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <h5>
+                            <strong> SUBREGION: </strong> {{info.subregion}}
+                        </h5>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h5 class="indigo-text">
+                            <strong> TIMEZONES: </strong>
+                            <span *ngFor="let timezone of info.timezones; let last=last">
                 {{timezone}} {{ last ? '':', '}}
               </span>
-            </h5>
-          </div>
+                        </h5>
+                    </div>
 
-          <div class="col-lg-6">
-            <h5 class="indigo-text">
-              <strong> BORDERS: </strong>
-              <span *ngFor="let border of info.borders; let last=last">
+                    <div class="col-lg-6">
+                        <h5 class="indigo-text">
+                            <strong> BORDERS: </strong>
+                            <span *ngFor="let border of info.borders; let last=last">
                 {{border}} {{ last ? '':', '}}
               </span>
-            </h5>
-          </div>
+                        </h5>
+                    </div>
 
-        </div>
+                </div>
 
-        <div class="row">
-          <div class="col-lg-6">
-            <h5 class="indigo-text">
-              <strong> LANGUAGES: </strong>
-              <span *ngFor="let language of info.languages; let last=last">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h5 class="indigo-text">
+                            <strong> LANGUAGES: </strong>
+                            <span *ngFor="let language of info.languages; let last=last">
                 {{language.name}} {{ last ? '':', '}}
               </span>
-            </h5>
-          </div>
+                        </h5>
+                    </div>
 
-          <div class="col-lg-6">
-            <h5 class="indigo-text">
-              <strong> CURRENCIES: </strong>
-              <span *ngFor="let currency of info.currencies; let last=last">
+                    <div class="col-lg-6">
+                        <h5 class="indigo-text">
+                            <strong> CURRENCIES: </strong>
+                            <span *ngFor="let currency of info.currencies; let last=last">
                 {{currency.name}} {{ last ? '':', '}}
               </span>
-            </h5>
-          </div>
+                        </h5>
+                    </div>
+                </div>
+
+            </div>
         </div>
+        <!--/.Card content-->
 
-      </div>
     </div>
-    <!--/.Card content-->
-
-  </div>
-  <!--/.Card-->
+    <!--/.Card-->
 
 </div>

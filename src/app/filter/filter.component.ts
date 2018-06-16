@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute , Router } from "@angular/router";
-import { CountriesApiService } from '../../countries-api.service'
+import { CountriesApiService } from '../countries-api.service'
 
 @Component({
   selector: 'app-filter',
@@ -20,7 +20,6 @@ export class FilterComponent implements OnInit {
     this.countryService.fetchCountriesOfRegion(lang).subscribe(
       data =>{
         this.info = data;
-        console.log(this.info);
       },
       error =>{
         console.log(error.errorMessage);
