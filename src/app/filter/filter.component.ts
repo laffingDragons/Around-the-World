@@ -16,18 +16,31 @@ export class FilterComponent implements OnInit {
   ngOnInit() {
     let lang = this._route.snapshot.paramMap.get('lang');
 
+    console.log("#######", lang.length);
+    if(lang.length == 2){
+      this.countryService.fetchCountriesForLang(lang).subscribe(
+        data =>{
+          this.info = data;
+        },
+        error =>{
+          console.log(error.errorMessage);
+        },
+      )
+    }else{
+      this.countryService.fetchCountriesForCurrency(lang).subscribe(
+        data =>{
+          this.info = data;
+        },
+        error =>{
+          console.log(error.errorMessage);
+        },
+      )
+
+    }
     // pass regionName to api request function
-    this.countryService.fetchCountriesOfRegion(lang).subscribe(
-      data =>{
-        this.info = data;
-      },
-      error =>{
-        console.log(error.errorMessage);
-      },
-    )
-  
-
-
   }
+      backButton() {
+        this.location.back();
+      }
 
 }

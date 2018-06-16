@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {  MatButtonModule, MatCardModule, MatFormFieldModule, MatSelectModule, MatOptionModule, MatTooltipModule, MatAutocompleteModule } from '@angular/material';
+import {  MatInputModule,MatButtonModule, MatCardModule, MatFormFieldModule, MatSelectModule, MatOptionModule, MatTooltipModule, MatAutocompleteModule } from '@angular/material';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -39,11 +39,12 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     MatSelectModule,
     MatOptionModule,
     MatTooltipModule,
+    MatInputModule,
     WavesModule,    
     NgbModule.forRoot(),
     RouterModule.forRoot([
       {path: 'home', component: HomeComponent},
-      {path: 'filter', component: FilterComponent},
+      {path: 'filter/:lang', component: FilterComponent},
       {path: '', redirectTo: 'home', pathMatch:'full'},
       {path: '**', component:HomeComponent}
     ]),

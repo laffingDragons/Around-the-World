@@ -23,6 +23,12 @@ export class CountriesApiService {
     return Observable.throw(err.message);   
   }
 
+  // fetch All countries
+  public fetchAll() {
+    let response = this.http.get(`${this.baseUrl}/all`);
+    return response;
+  }
+
   // fetch countries of a region
   public fetchCountriesOfRegion(region) {
     let response = this.http.get(`${this.baseUrl}/region/${region}`);
@@ -38,6 +44,12 @@ export class CountriesApiService {
   // fetch countries for language
   public fetchCountriesForLang(lang) {
     let response = this.http.get(`${this.baseUrl}/lang/${lang}`)
+    return response;
+  }
+
+   // fetch countries for language
+   public fetchCountriesForCurrency(currency) {
+    let response = this.http.get(`${this.baseUrl}/currency/${currency}`)
     return response;
   }
 }
