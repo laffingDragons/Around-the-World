@@ -11,13 +11,14 @@ import { CountriesApiService } from '../countries-api.service'
 export class FilterComponent implements OnInit {
 
   public info:any;
+  public title:any;
   constructor(private location: Location, private _route:ActivatedRoute, private router:Router, private countryService: CountriesApiService) { }
 
   ngOnInit() {
     let lang = this._route.snapshot.paramMap.get('lang');
 
-    console.log("#######", lang.length);
     if(lang.length == 2){
+      this.title = "Language";
       this.countryService.fetchCountriesForLang(lang).subscribe(
         data =>{
           this.info = data;
@@ -27,6 +28,7 @@ export class FilterComponent implements OnInit {
         },
       )
     }else{
+      this.title = "Currency";
       this.countryService.fetchCountriesForCurrency(lang).subscribe(
         data =>{
           this.info = data;
