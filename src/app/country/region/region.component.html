@@ -8,11 +8,11 @@
 
 <div class="container">
     <div class="row">
-            <form  class="mx-auto" style="font-size:30px;">
-                <mat-form-field class="example-full-width">
-                    <input matInput type="text" placeholder="Search" name="search" [(ngModel)]="userFilter.name">
-                </mat-form-field>
-            </form>
+        <form class="mx-auto" style="font-size:30px;">
+            <mat-form-field class="example-full-width">
+                <input matInput type="text" placeholder="Search" name="search" [(ngModel)]="userFilter.name">
+            </mat-form-field>
+        </form>
     </div>
 </div>
 
@@ -22,8 +22,7 @@
     <!--Grid row-->
     <div class="row">
         <!--Grid column-->
-        <div *ngFor="let country of info | orderBy: key : reverse |  filterBy:userFilter | paginate: { itemsPerPage: 6, currentPage: p };"
-            class="col-lg-4 col-md-6 col-sm-12">
+        <div *ngFor="let country of info | orderBy: key : reverse |  filterBy:userFilter | paginate: { itemsPerPage: 12, currentPage: p };" class="col-lg-4 col-md-6 col-sm-12">
 
             <!--Card-->
             <div [routerLink]="['/country', country.alpha2Code]" class="card testimonial-card">

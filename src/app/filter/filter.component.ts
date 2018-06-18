@@ -11,9 +11,10 @@ import { CountriesApiService } from '../countries-api.service';
 
 export class FilterComponent implements OnInit, OnChanges {
 
-  @Input() selectedValueLang: String;
-  @Input() selectedValueCurrency: String;
+  @Input() lang: string;
   
+  private _lang:string ;
+
 
   public info: any;
   public title: any;
@@ -22,6 +23,7 @@ export class FilterComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     let lang = this._route.snapshot.paramMap.get('lang');
+    this._lang = this.lang
 
     if (lang.length == 2) {
       this.title = "Language";
@@ -49,13 +51,8 @@ export class FilterComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log('Changes')
-    // for (let propName in changes) {
-    //   let chng = changes[propName];
-    //   let cur = JSON.stringify(chng.currentValue);
-    //   let prev = JSON.stringify(chng.previousValue);
-    //   // this.changeLog.push(`${propName}: currentValue = ${cur}, previousValue = ${prev}`);
-    // }
+    console.log('Changes', changes)
+    this.ngOnInit(); 
   }
 
   backButton() {

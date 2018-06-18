@@ -55,7 +55,6 @@ export class AppComponent implements OnInit {
           }
         }
         this.uniqueCurrencyCode = Array.from(new Set(this.currencyCode))
-        console.log("!!!!!",this.uniqueCurrencyCode);
      }
 
   fetchCountriesForLang(event){
