@@ -15,8 +15,6 @@ import { MDBBootstrapModule, WavesModule } from 'angular-bootstrap-md';
 import { HttpClientModule } from "@angular/common/http";
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,

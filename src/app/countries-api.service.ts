@@ -31,25 +31,25 @@ export class CountriesApiService {
 
   // fetch countries of a region
   public fetchCountriesOfRegion(region) {
-    let response = this.http.get(`${this.baseUrl}/region/${region}`);
+    let response = this.http.get(`${this.baseUrl}/region/${region}?fields=name;capital;alpha2Code;flag;subregion;currencies;timezones`);
     return response;
   }
 
   // fetch country information
   public fetchCountryInfo(country) {
-    let response = this.http.get(`${this.baseUrl}/alpha/${country}`)
+    let response = this.http.get(`${this.baseUrl}/alpha/${country}?fields=name;capital;population;area;region;flag;subregion;currencies;timezones;borders;languages`)
     return response;
   }
 
   // fetch countries for language
   public fetchCountriesForLang(lang) {
-    let response = this.http.get(`${this.baseUrl}/lang/${lang}`)
+    let response = this.http.get(`${this.baseUrl}/lang/${lang}?fields=name;capital;alpha2Code;flag;subregion;currencies;timezones`)
     return response;
   }
 
    // fetch countries for language
    public fetchCountriesForCurrency(currency) {
-    let response = this.http.get(`${this.baseUrl}/currency/${currency}`)
+    let response = this.http.get(`${this.baseUrl}/currency/${currency}?fields=name;capital;alpha2Code;flag;subregion;currencies;timezones`)
     return response;
   }
 }

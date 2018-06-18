@@ -12,7 +12,7 @@
             <div class="col-md-6 col-lg-6"></div>
             <div class="col-md-3 col-lg-3">
                 <mat-form-field>
-                    <mat-select [(ngModel)]="selectedValueCurrency" name="selectedValueLang" placeholder="Currency">
+                    <mat-select [(ngModel)]="selectedValueCurrency" name="selectedValueCurrency" placeholder="Currency">
                         <mat-option>None</mat-option>
                         <mat-option *ngFor="let code of uniqueCurrencyCode" (click)="fetchCountriesForCurrency($event)" [value]="code">{{code}}</mat-option>
                     </mat-select>
