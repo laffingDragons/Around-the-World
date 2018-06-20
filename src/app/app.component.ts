@@ -1,16 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from "@angular/router";
 import { CountriesApiService } from './countries-api.service'
-
-
-
+import { log } from 'util';
+// import {Input } from './filter/filter.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  // providers: [FilterComponent]
 })
 export class AppComponent implements OnInit {
+
+  @Input() lang: string;
+
   
   public selectedValueLang : string;
   public tempArrayForLang : any;
@@ -59,10 +62,16 @@ export class AppComponent implements OnInit {
 
   fetchCountriesForLang(event){
     this.router.navigate(['/filter', this.selectedValueLang]);
-    
+    // this.filterComponent.ngOnInit();    
   }
 
   fetchCountriesForCurrency(event){
     this.router.navigate(['/filter', this.selectedValueCurrency]);
+    // this.filterComponent.ngOnInit();        
+  }
+  
+  random(){
+    console.log("Power");
+    
   }
 }

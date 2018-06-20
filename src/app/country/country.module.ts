@@ -10,6 +10,7 @@ import { FilterPipeModule } from 'ngx-filter-pipe';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { Ng2OrderModule } from 'ng2-order-pipe'; //importing the module
 import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
+import { SharedModule } from '../shared/shared.module'
  
 @NgModule({
   imports: [

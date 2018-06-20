@@ -8,10 +8,6 @@ import {  MatInputModule, MatCardModule, MatFormFieldModule, MatSelectModule, Ma
 
 @NgModule({
   imports: [
-    CommonModule
-  ],
-  declarations: [SelectFilterComponent],
-  exports:[
     CommonModule,
     FormsModule, 
     ReactiveFormsModule,
@@ -20,6 +16,19 @@ import {  MatInputModule, MatCardModule, MatFormFieldModule, MatSelectModule, Ma
     MatSelectModule, 
     MatOptionModule,
     MatTooltipModule
+  ],
+  declarations: [SelectFilterComponent],
+  
+  exports:[
+    CommonModule,
+    FormsModule, 
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule, 
+    MatSelectModule, 
+    MatOptionModule,
+    MatTooltipModule,
+    SelectFilterComponent
   ]
 })
 export class SharedModule { }

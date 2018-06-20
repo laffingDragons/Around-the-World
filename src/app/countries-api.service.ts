@@ -52,4 +52,5 @@ export class CountriesApiService {
     let response = this.http.get(`${this.baseUrl}/currency/${currency}?fields=name;capital;alpha2Code;flag;subregion;currencies;timezones`)
     return response;
   }
+
 }
