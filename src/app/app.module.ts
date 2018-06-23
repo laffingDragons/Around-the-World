@@ -19,7 +19,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
   declarations: [
     AppComponent,
     HomeComponent,
-    FilterComponent
+    FilterComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,7 +46,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
       {path: '', redirectTo: 'home', pathMatch:'full'},
       {path: '**', component:HomeComponent}
     ]),
-    SharedModule
+    SharedModule,
   ],
   providers: [
     CountriesApiService    

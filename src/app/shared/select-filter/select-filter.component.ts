@@ -1,14 +1,17 @@
-import { Component, OnInit, OnChanges, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output} from '@angular/core';
 import { Router } from "@angular/router";
 import { CountriesApiService } from '../../countries-api.service'
 
 
 @Component({
-  selector: 'app-select-filter',
+  selector: 'select-filter',
   templateUrl: './select-filter.component.html',
   styleUrls: ['./select-filter.component.css']
 })
 export class SelectFilterComponent implements OnInit {
+
+  @Output()
+  notify: EventEmitter<String> = new EventEmitter<String>();
 
   public selectedValueLang : string;
   public tempArrayForLang : any;
@@ -33,7 +36,7 @@ export class SelectFilterComponent implements OnInit {
         }
       ); //get request ends here
     }
-  
+    
 
     langIteration(){
 
@@ -56,11 +59,13 @@ export class SelectFilterComponent implements OnInit {
      }
 
   fetchCountriesForLang(event){
+    this.notify.emit(this.selectedValueLang);
     this.router.navigate(['/filter', this.selectedValueLang]);
     
   }
 
   fetchCountriesForCurrency(event){
+    this.notify.emit(this.selectedValueCurrency);
     this.router.navigate(['/filter', this.selectedValueCurrency]);
   }
 }

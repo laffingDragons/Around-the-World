@@ -1,24 +1,3 @@
 <div class="home">
-<div class="container">
-    <div class="row">
-        <div class="col-md-3 col-lg-3">
-            <mat-form-field>
-                <mat-select [(ngModel)]="selectedValueLang" name="selectedValueLang" placeholder="Language">
-                    <mat-option>None</mat-option>
-                    <mat-option *ngFor="let code of uniqueLangCode" (click)="fetchCountriesForLang($event)" [value]="code">{{code}}</mat-option>
-                </mat-select>
-            </mat-form-field>
-        </div>
-        <div class="col-md-6 col-lg-6"></div>
-        <div class="col-md-3 col-lg-3">
-            <mat-form-field>
-                <mat-select [(ngModel)]="selectedValueCurrency" name="selectedValueCurrency" placeholder="Currency">
-                    <mat-option>None</mat-option>
-                    <mat-option *ngFor="let code of uniqueCurrencyCode" (click)="fetchCountriesForCurrency($event)" [value]="code">{{code}}</mat-option>
-                </mat-select>
-            </mat-form-field>
-        </div>
-    </div>
-</div>
     <router-outlet></router-outlet>
 </div>

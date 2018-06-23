@@ -18,13 +18,14 @@ import {  MatInputModule, MatCardModule, MatFormFieldModule, MatSelectModule, Ma
     MatTooltipModule
   ],
   declarations: [SelectFilterComponent],
-  
   exports:[
     CommonModule,
     FormsModule, 
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatFormFieldModule, 
+    MatInputModule, 
+    MatCardModule,
     MatSelectModule, 
     MatOptionModule,
     MatTooltipModule,
