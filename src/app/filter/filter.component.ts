@@ -1,17 +1,23 @@
 import { Component, OnInit } from '@angular/core';
+import { trigger, transition, useAnimation } from '@angular/animations';
+import { fadeInUp } from 'ng-animate';
 import { Location } from '@angular/common';
 import { ActivatedRoute, Router } from "@angular/router";
 import { CountriesApiService } from '../countries-api.service';
+import { FilterData } from "./filter";
 
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.css'],
+  animations: [
+    trigger('fadeInUp', [transition('* => *', useAnimation(fadeInUp))])
+  ],
 })
 
 export class FilterComponent implements OnInit {
 
-
+  public fadeInUp:any;
   public info: any;
   public title: any;
 
@@ -33,8 +39,20 @@ public functionToGetDataFromService():any{
     if (lang.length == 2) {
       this.title = "Language";
       this.countryService.fetchCountriesForLang(lang).subscribe(
-        data => {
-          this.info = data;
+        (data:any) => {
+          this.info = [];
+          for (let i of data) {
+            let countryData: FilterData = {
+              name: i.name,
+              capital: i.capital,
+              alpha2Code: i.alpha2Code,
+              flag: i.flag,
+              subregion: i.subregion,
+              currencies: i.currencies,
+              timezones: i.timezones,
+            }
+            this.info.push(countryData);
+          }
         },
         error => {
           console.log(error.errorMessage);
@@ -65,8 +83,20 @@ public function(value):any{
     if (lang.length == 2) {
       this.title = "Language";
       this.countryService.fetchCountriesForLang(lang).subscribe(
-        data => {
-          this.info = data;
+        (data:any) => {
+          this.info = [];
+          for (let i of data) {
+            let countryData: FilterData = {
+              name: i.name,
+              capital: i.capital,
+              alpha2Code: i.alpha2Code,
+              flag: i.flag,
+              subregion: i.subregion,
+              currencies: i.currencies,
+              timezones: i.timezones,
+            }
+            this.info.push(countryData);
+          }
         },
         error => {
           console.log(error.errorMessage);

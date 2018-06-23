@@ -10,7 +10,10 @@
 
 <i (click)="backButton()" class="fa fa-long-arrow-left fa-2x" aria-hidden="true"></i>
 
-<div class="container country-cards">
+<mat-spinner class="mx-auto" *ngIf="!info"></mat-spinner>
+
+
+<div *ngIf="info" class="container country-cards" [@fadeInUp]="fadeInUp">
     <!--Grid row-->
     <div class="row">
         <!--Grid column-->

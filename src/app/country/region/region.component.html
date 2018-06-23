@@ -1,68 +1,72 @@
 <select-filter></select-filter>
-<div class="container-fluid heading">
-    <div class="row page-title">
-        <div class="mx-auto">
-            <h1 class="center" [routerLink]="['/home']" matTooltip="Click to goto home"> {{regionName}} </h1>
+<div [@slideInRight]="slideInRight">
+    <div class="container-fluid heading">
+        <div class="row page-title">
+            <div class="mx-auto">
+                <h1 class="center" [routerLink]="['/home']" matTooltip="Click to goto home"> {{regionName}} </h1>
+            </div>
         </div>
     </div>
-</div>
 
-<div class="container">
-    <div class="row">
-        <form class="mx-auto" style="font-size:30px;">
-            <mat-form-field class="example-full-width">
-                <input matInput type="text" placeholder="Search" name="search" [(ngModel)]="userFilter.name">
-            </mat-form-field>
-        </form>
+    <div class="container">
+        <div class="row">
+            <form class="mx-auto" style="font-size:30px;">
+                <mat-form-field class="example-full-width">
+                    <input matInput type="text" placeholder="Search" name="search" [(ngModel)]="userFilter.name">
+                </mat-form-field>
+            </form>
+        </div>
     </div>
-</div>
 
-<i (click)="backButton()" class="fa fa-long-arrow-left fa-2x" aria-hidden="true"></i>
+    <i (click)="backButton()" class="fa fa-long-arrow-left fa-2x" aria-hidden="true"></i>
 
-<div class="container country-cards">
-    <!--Grid row-->
-    <div class="row">
-        <!--Grid column-->
-        <div *ngFor="let country of info | orderBy: key : reverse |  filterBy:userFilter | paginate: { itemsPerPage: 12, currentPage: p };" class="col-lg-4 col-md-6 col-sm-12">
+    <mat-spinner class="mx-auto" *ngIf="!info"></mat-spinner>
 
-            <!--Card-->
-            <div [routerLink]="['/country', country.alpha2Code]" class="card testimonial-card">
+    <div *ngIf="info" class="container country-cards">
+        <!--Grid row-->
+        <div class="row">
+            <!--Grid column-->
+            <div *ngFor="let country of info | orderBy: key : reverse |  filterBy:userFilter | paginate: { itemsPerPage: 12, currentPage: p };" class="col-lg-4 col-md-6 col-sm-12">
 
-                <!--Bacground color-->
-                <div class="card-up aqua-gradient">
-                </div>
+                <!--Card-->
+                <div [routerLink]="['/country', country.alpha2Code]" class="card testimonial-card">
 
-                <!--Avatar-->
-                <div class="avatar mx-auto white">
-                    <img src="{{ country.flag }}" class="rounded-circle">
-                </div>
+                    <!--Bacground color-->
+                    <div class="card-up aqua-gradient">
+                    </div>
 
-                <div class="card-body">
-                    <!--Name-->
-                    <h4 class="card-title">{{ country.name }}</h4>
-                    <hr>
-                    <!--Quotation-->
-                    <p> CAPITAL : {{ country.capital }}
-                    </p>
-                    <p> SUBREGION: {{ country.subregion }}
-                    </p>
-                    <span> CURRENCY: </span>
-                    <span *ngFor="let currency of country.currencies; let last=last">
+                    <!--Avatar-->
+                    <div class="avatar mx-auto white">
+                        <img src="{{ country.flag }}" class="rounded-circle">
+                    </div>
+
+                    <div class="card-body">
+                        <!--Name-->
+                        <h4 class="card-title">{{ country.name }}</h4>
+                        <hr>
+                        <!--Quotation-->
+                        <p> CAPITAL : {{ country.capital }}
+                        </p>
+                        <p> SUBREGION: {{ country.subregion }}
+                        </p>
+                        <span> CURRENCY: </span>
+                        <span *ngFor="let currency of country.currencies; let last=last">
                         {{ currency.name }} {{ currency.symbol }} {{ last ? '':', '}}
                     </span>
-                    <span> TIMEZONES: </span>
-                    <span *ngFor="let timezone of country.timezones; let last=last;">
+                        <span> TIMEZONES: </span>
+                        <span *ngFor="let timezone of country.timezones; let last=last;">
                         {{ timezone }} {{last ? '':', '}}
                     </span>
+                    </div>
+
                 </div>
+                <!--/.Card-->
 
             </div>
-            <!--/.Card-->
+            <!--Grid column-->
+            <pagination-controls class="mx-auto" (pageChange)="p = $event"></pagination-controls>
 
         </div>
-        <!--Grid column-->
-        <pagination-controls class="mx-auto" (pageChange)="p = $event"></pagination-controls>
-
+        <!--Grid row-->
     </div>
-    <!--Grid row-->
 </div>

@@ -51,6 +51,11 @@
     background-size: 100% 600px;
 }
 
+.mat-progress-spinner circle,
+.mat-spinner circle {
+    stroke: white;
+}
+
 .mat-form-field-infix {
     display: inline !important;
     width: auto !important;

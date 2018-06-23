@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {  MatInputModule,MatButtonModule, MatCardModule, MatFormFieldModule, MatSelectModule, MatOptionModule, MatTooltipModule, MatAutocompleteModule } from '@angular/material';
+import {  MatProgressSpinnerModule, MatInputModule, MatButtonModule, MatCardModule, MatFormFieldModule, MatSelectModule, MatOptionModule, MatTooltipModule, MatAutocompleteModule } from '@angular/material';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,6 +14,8 @@ import { CountriesApiService } from './countries-api.service';
 import { MDBBootstrapModule, WavesModule } from 'angular-bootstrap-md';
 import { HttpClientModule } from "@angular/common/http";
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
+
 
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     HttpClientModule,
     MatAutocompleteModule,
     MatButtonModule,
+    MatProgressSpinnerModule,
     MatCardModule,
     MatFormFieldModule,
     MatSelectModule,
