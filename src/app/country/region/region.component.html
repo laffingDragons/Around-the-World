@@ -1,5 +1,10 @@
+<!-- Partial component -->
 <select-filter></select-filter>
-<div [@slideInRight]="slideInRight">
+<!-- Loader before the data comes -->
+<mat-spinner class="mx-auto" *ngIf="!info"></mat-spinner>
+
+<!-- main container -->
+<div *ngIf="info" [@slideInRight]="slideInRight">
     <div class="container-fluid heading">
         <div class="row page-title">
             <div class="mx-auto">
@@ -8,6 +13,7 @@
         </div>
     </div>
 
+    <!-- search filter -->
     <div class="container">
         <div class="row">
             <form class="mx-auto" style="font-size:30px;">
@@ -18,15 +24,16 @@
         </div>
     </div>
 
+    <!-- back icon -->
     <i (click)="backButton()" class="fa fa-long-arrow-left fa-2x" aria-hidden="true"></i>
 
-    <mat-spinner class="mx-auto" *ngIf="!info"></mat-spinner>
-
-    <div *ngIf="info" class="container country-cards">
+    <!-- Container to dislay all countries in the region  -->
+    <div class="container country-cards">
         <!--Grid row-->
         <div class="row">
             <!--Grid column-->
-            <div *ngFor="let country of info | orderBy: key : reverse |  filterBy:userFilter | paginate: { itemsPerPage: 12, currentPage: p };" class="col-lg-4 col-md-6 col-sm-12">
+            <div *ngFor="let country of info | orderBy: key : reverse |  filterBy:userFilter | paginate: { itemsPerPage: 12, currentPage: p };"
+                class="col-lg-4 col-md-6 col-sm-12">
 
                 <!--Card-->
                 <div [routerLink]="['/country', country.alpha2Code]" class="card testimonial-card">
@@ -51,12 +58,12 @@
                         </p>
                         <span> CURRENCY: </span>
                         <span *ngFor="let currency of country.currencies; let last=last">
-                        {{ currency.name }} {{ currency.symbol }} {{ last ? '':', '}}
-                    </span>
+                            {{ currency.name }} {{ currency.symbol }} {{ last ? '':', '}}
+                        </span>
                         <span> TIMEZONES: </span>
                         <span *ngFor="let timezone of country.timezones; let last=last;">
-                        {{ timezone }} {{last ? '':', '}}
-                    </span>
+                            {{ timezone }} {{last ? '':', '}}
+                        </span>
                     </div>
 
                 </div>
