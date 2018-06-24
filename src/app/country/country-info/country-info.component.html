@@ -1,4 +1,5 @@
 <select-filter></select-filter>
+
 <div>
     <div *ngIf="info" class="container-fluid heading">
         <div class="row page-title">
@@ -67,8 +68,8 @@
                             <h5 class="indigo-text">
                                 <strong> TIMEZONES: </strong>
                                 <span *ngFor="let timezone of info[0].timezones; let last=last">
-                                {{timezone}} {{ last ? '':', '}}
-                            </span>
+                  {{timezone}} {{ last ? '':', '}}
+                </span>
                             </h5>
                         </div>
 
@@ -76,8 +77,8 @@
                             <h5 class="indigo-text">
                                 <strong> BORDERS: </strong>
                                 <span *ngFor="let border of info[0].borders; let last=last">
-                                {{border}} {{ last ? '':', '}}
-                            </span>
+                  {{border}} {{ last ? '':', '}}
+                </span>
                             </h5>
                         </div>
 
@@ -88,8 +89,8 @@
                             <h5 class="indigo-text">
                                 <strong> LANGUAGES: </strong>
                                 <span *ngFor="let language of info[0].languages; let last=last">
-                                {{language.name}} {{ last ? '':', '}}
-                            </span>
+                  {{language.name}} {{ last ? '':', '}}
+                </span>
                             </h5>
                         </div>
 
@@ -97,8 +98,8 @@
                             <h5 class="indigo-text">
                                 <strong> CURRENCIES: </strong>
                                 <span *ngFor="let currency of info[0].currencies; let last=last">
-                                    {{currency.name}} {{ last ? '':', '}}
-                            </span>
+                  {{currency.name}} {{ last ? '':', '}}
+                </span>
                             </h5>
                         </div>
                     </div>

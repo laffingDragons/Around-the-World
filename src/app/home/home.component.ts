@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
-import { trigger, transition, useAnimation } from '@angular/animations';
+import { trigger, transition, useAnimation } from '@angular/animations'; //External animation module
 import { fadeIn } from 'ng-animate';
 
 @Component({
@@ -24,7 +24,9 @@ export class HomeComponent implements OnInit {
 
  
   public routeToRegion() {
-    this.route.navigate(['/region'])    
+
+    this.route.navigate(['/region']);
+        
   }
 
 }

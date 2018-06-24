@@ -25,6 +25,7 @@ export class FilterComponent implements OnInit {
 
   ngOnInit() {
 
+    // calling function 
     this.functionToGetDataFromService();
 
   }
@@ -36,12 +37,20 @@ public functionToGetDataFromService():any{
 
   let lang = this._route.snapshot.paramMap.get('lang');
   
+  // check for the value
     if (lang.length == 2) {
+
       this.title = "Language";
+
       this.countryService.fetchCountriesForLang(lang).subscribe(
+
         (data:any) => {
+
           this.info = [];
+
           for (let i of data) {
+
+            // implementing interface
             let countryData: FilterData = {
               name: i.name,
               capital: i.capital,
@@ -51,21 +60,48 @@ public functionToGetDataFromService():any{
               currencies: i.currencies,
               timezones: i.timezones,
             }
+
             this.info.push(countryData);
+
           }
         },
         error => {
+
           console.log(error.errorMessage);
+
         },
       )
+
     } else {
+
       this.title = "Currency";
+
       this.countryService.fetchCountriesForCurrency(lang).subscribe(
-        data => {
-          this.info = data;
+
+        (data:any) => {
+
+          this.info = [];
+
+          for (let i of data) {
+
+            let countryData: FilterData = {
+              name: i.name,
+              capital: i.capital,
+              alpha2Code: i.alpha2Code,
+              flag: i.flag,
+              subregion: i.subregion,
+              currencies: i.currencies,
+              timezones: i.timezones,
+            }
+
+            this.info.push(countryData);
+
+          }
         },
         error => {
+
           console.log(error.errorMessage);
+
         },
       )
 
@@ -81,8 +117,11 @@ public function(value):any{
   let lang = value;
   
     if (lang.length == 2) {
+
       this.title = "Language";
+
       this.countryService.fetchCountriesForLang(lang).subscribe(
+
         (data:any) => {
           this.info = [];
           for (let i of data) {
@@ -95,19 +134,45 @@ public function(value):any{
               currencies: i.currencies,
               timezones: i.timezones,
             }
+
             this.info.push(countryData);
+
           }
         },
         error => {
+
           console.log(error.errorMessage);
+
         },
       )
     } else {
+
       this.title = "Currency";
+
       this.countryService.fetchCountriesForCurrency(lang).subscribe(
-        data => {
-          this.info = data;
+
+       
+        (data:any) => {
+
+          this.info = [];
+
+          for (let i of data) {
+            
+            let countryData: FilterData = {
+              name: i.name,
+              capital: i.capital,
+              alpha2Code: i.alpha2Code,
+              flag: i.flag,
+              subregion: i.subregion,
+              currencies: i.currencies,
+              timezones: i.timezones,
+            }
+
+            this.info.push(countryData);
+
+          }
         },
+
         error => {
           console.log(error.errorMessage);
         },
