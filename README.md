@@ -2,6 +2,26 @@
 
 This project was generated with Angular CLI version 6.0.7.
 
+
+## Screenshots
+
+### Home
+
+![Alt text](https://github.com/laffingDragons/Screenshots/blob/master/27.PNG?raw=true "Title")
+
+### Region
+
+![Alt text](https://github.com/laffingDragons/Screenshots/blob/master/28.PNG?raw=true "Title")
+
+### Country
+
+![Alt text](https://github.com/laffingDragons/Screenshots/blob/master/29.PNG?raw=true "Title")
+
+### Currency
+
+![Alt text](https://github.com/laffingDragons/Screenshots/blob/master/30.PNG?raw=true "Title")
+
+
 ## Getting Started
 
 To install the Angular CLI:
